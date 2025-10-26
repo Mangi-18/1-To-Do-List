@@ -8,8 +8,11 @@
 </head>
 <body>
     <h1 class="title">To Do List</h1>
+    <p class="date">Add date here later using JS</p>
+    
+    <div class="container">
     <div class="currentTasks lefthalf">
-        <table border="solid">
+        <table>
             <thead>
                 <th>Task</th>
                 <th>Status</th>
@@ -23,12 +26,10 @@
     </div>
     <div class="addTasks righthalf">
         <form>
-        <label for="task" >Task</label>
-        <br>
+        <label for="task" >Task:</label>
         <input id="task" type="text" required>
-        <br>
+        
         <label for="status">Status:</label>
-        <br>
         <select name="cur_status" id="status">
             <option value="">Chose the Status</option>
             <option value="Completed">Completed</option>
@@ -36,18 +37,17 @@
             <option value="ongoing">Ongoing</option>
             <option value="urgent">Urgent</option>
         </select>
-        <br>
-        <label for="date">Date</label>
-        <br>
+        
+        <label for="date">Date:</label>
         <input id="date" type="date" required>
-        <br>
-        <label for="time">Time</label>
-        <br>
+        
+        <label for="time">Time:</label>
         <input id="time" type="time" required>
-        <br>
-        <button type="button">Add Task</button>
-        <button type="button">Clear </button>
+        
+        <button type="button" class="submitBtn">Add Task</button>
+        <button type="button" class="clearBtn">Clear </button>
         </form>
+    </div>
     </div>
     <script src="app.js"></script>
 </body>

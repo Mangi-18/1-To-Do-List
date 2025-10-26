@@ -4,7 +4,7 @@ body{
     padding:10px;
     margin:15px;
 }
-h1.title{
+h1.title, .date{
     color:rgb(0, 46, 197);
     text-align:center;
     margin-bottom:25px;
@@ -15,20 +15,70 @@ h1:hover{
 body > div{
     display:flex;
     gap:20px;
+    justify-content:space-around;
 }
 .lefthalf, .righthalf{
-    display:flex;
-    justify-content:center;
     border-radius:6px;
     background-color:white;
     flex-wrap:wrap;
-    max-height:80vh;
+    max-height:100vh;
     overflow:auto;
+    padding:10px;
+}
+.lefthalf{
+    width:600px;
+    flex:2;
+}
+.righthalf{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:400px;
+    height:300px;
+    flex:1;
 }
 .currentTasks table{
     border-collapse:collapse;
     width:100%;
+    padding:10px;
 }
 .currentTasks td{
     text-align:left;
+    margin:5px;
+    border-bottom:1px solid black;
 }
+.currentTasks thead{
+    background-color:yellow;
+    font-weight:bold;
+}
+.addTasks label{
+    font-weight:bold;
+    display:block;
+}
+.addTasks input, .addTasks select{
+    color:green;
+    margin-top:7px;
+    margin-bottom:7px;
+    padding:5px;
+    width:100%;
+    font-size:13px;
+    border-radius:20px;
+    border:1px solid rgb(227, 150, 8)
+
+}
+.addTasks button {
+    padding:10px 20px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+}
+.addTasks .submitBtn{
+    background-color:rgb(35, 235, 35);
+}
+.addTasks .clearBtn{
+    background-color:rgb(189, 122, 7);
+}
+.addTasks button:hover {
+    opacity: 0.75;
+}
+
