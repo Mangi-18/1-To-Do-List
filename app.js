@@ -10,7 +10,7 @@ subbtn.addEventListener('click', () => {
     const date = document.querySelector('#date').value;
     const time = document.querySelector('#time').value;
 
-    if (!time || !task || !date || !status) {
+    if (!task || !date || !status) {
         alert('Please dont submit any blank data');
         return;
     }
