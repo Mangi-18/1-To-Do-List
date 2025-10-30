@@ -20,6 +20,7 @@ subbtn.addEventListener('click',()=>{
     <td>${task}</td>
     <td>${status}</td>
     <td>${date} ${time}</td>
+    <td> <button class="delBtn">Delete </button> <button class="completedBtn">Completed</button> </td>
     `
     let tableBody=document.querySelector('.storedTasks tbody');
     console.log(tableBody);
@@ -31,9 +32,23 @@ subbtn.addEventListener('click',()=>{
     document.querySelector('#date').value = '';
     document.querySelector('#time').value = '';
 
+  
+
 
 })
-
+document.querySelector('.storedTasks').addEventListener('click', function(e) {
+    if (e.target.classList.contains('delBtn')) {
+        e.target.closest('tr').remove();
+    } else if (e.target.classList.contains('completedBtn')) {
+        e.target.closest('tr').style.textDecoration = 'line-through';
+    }
+});
 
 //write the function to perform when you click the clear button in the rhs
 let clrbtn=document.querySelector('.clearBtn');
+clrbtn.addEventListener('click',()=>{
+    document.querySelector('#task').value='';
+    document.querySelector('#status').value='';
+    document.querySelector('#date').value='';
+    document.querySelector('#time').value='';
+})
