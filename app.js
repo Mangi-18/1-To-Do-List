@@ -1,15 +1,39 @@
-let date=document.querySelector('.date');
+let t_date=document.querySelector('.t_date');
 const today= new Date();
-date.textContent=`${today.toLocaleDateString()}`;
+t_date.textContent=`${today.toLocaleDateString()}`;
 
-let taskData=document.getElementById('.addTasks task').value;
-let status=document.getElementById('status').value;
-let date=document.getElementById('date').value;
-let time=document.getElementById('time').value;
+//write function to perform when you click the submit button
+let subbtn=document.querySelector('.submitBtn');
+subbtn.addEventListener('click',()=>{
+    const task=document.querySelector('#task').value;
+    const status=document.querySelector('#status').value;
+    const date=document.querySelector('#date').value;
+    const time=document.querySelector('#time').value;
+    // console.log(task,status,date,time);
+
+    if(!time || !task || !date||!status){
+        alert('Please dont submit any blank data');
+        return;
+    }
+    let newRow=document.createElement('tr');
+    newRow.innerHTML=`
+    <td>${task}</td>
+    <td>${status}</td>
+    <td>${date} ${time}</td>
+    `
+    let tableBody=document.querySelector('.storedTasks tbody');
+    console.log(tableBody);
+    tableBody.appendChild(newRow);
+    
+
+    document.querySelector('#task').value='';
+    document.querySelector('#status').value='';
+    document.querySelector('#date').value = '';
+    document.querySelector('#time').value = '';
 
 
+})
 
-let subBtn=document.querySelector('.submitBtn');
-subBtn.addEventListener('click',()=>{
-    console.log(taskData);
-});
+
+//write the function to perform when you click the clear button in the rhs
+let clrbtn=document.querySelector('.clearBtn');
