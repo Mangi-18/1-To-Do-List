@@ -58,7 +58,7 @@ clrbtn.addEventListener('click', () => {
     document.querySelector('#time').value = '';
 });
 
-// ✅ NEW FEATURE: Local Storage (everything below this line is new)
+//Below code is localStorage
 
 function saveTasks() {
     const rows = document.querySelectorAll('.storedTasks tbody tr');
