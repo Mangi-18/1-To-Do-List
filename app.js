@@ -2,7 +2,6 @@ let t_date = document.querySelector('.t_date');
 const today = new Date();
 t_date.textContent = `${today.toLocaleDateString()}`;
 
-//write function to perform when you click the submit button
 let subbtn = document.querySelector('.submitBtn');
 subbtn.addEventListener('click', () => {
     const task = document.querySelector('#task').value;
@@ -28,28 +27,24 @@ subbtn.addEventListener('click', () => {
     let tableBody = document.querySelector('.storedTasks tbody');
     tableBody.appendChild(newRow);
 
-    // Clear input fields
     document.querySelector('#task').value = '';
     document.querySelector('#status').value = '';
     document.querySelector('#date').value = '';
     document.querySelector('#time').value = '';
 
-    // delete button
     newRow.querySelector('.delBtn').addEventListener('click', () => {
         newRow.remove();
-        saveTasks(); // NEW
+        saveTasks();
     });
 
-    // completed button
     newRow.querySelector('.completedBtn').addEventListener('click', () => {
         newRow.style.textDecoration = 'line-through';
-        saveTasks(); // NEW
+        saveTasks();
     });
 
-    saveTasks(); // NEW
+    saveTasks();
 });
 
-//write the function to perform when you click the clear button in the rhs
 let clrbtn = document.querySelector('.clearBtn');
 clrbtn.addEventListener('click', () => {
     document.querySelector('#task').value = '';
@@ -57,8 +52,6 @@ clrbtn.addEventListener('click', () => {
     document.querySelector('#date').value = '';
     document.querySelector('#time').value = '';
 });
-
-//Below code is localStorage
 
 function saveTasks() {
     const rows = document.querySelectorAll('.storedTasks tbody tr');
@@ -104,4 +97,4 @@ function loadTasks() {
     });
 }
 
-window.addEventListener('load', loadTasks); // NEW
+window.addEventListener('load', loadTasks);
